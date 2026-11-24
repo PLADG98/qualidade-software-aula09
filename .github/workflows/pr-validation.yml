@@ -1,0 +1,17 @@
+name: PR Validation
+
+on: [pull_request]  # Dispara em eventos de pull request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # Executa em container Ubuntu
+    steps:
+      - uses: actions/checkout@v4  # Checkout do código
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'       # Configura JDK 17
+          distribution: 'temurin'  # Obrigatório no setup-java (faltava no material)
+          cache: 'maven'
+      - name: Build and Test
+        run: mvn -B clean test     # Executa build e testes
