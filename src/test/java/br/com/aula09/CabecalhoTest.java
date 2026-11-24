@@ -10,4 +10,9 @@ class CabecalhoTest {
     void normalizaEspacosEMaiusculas() {
         assertEquals("application/json", Cabecalho.normalizar("  Application/JSON "));
     }
+
+    @Test
+    void cabecalhoNuloViraTextoVazio() {
+        assertEquals("", Cabecalho.normalizar(null));
+    }
 }
