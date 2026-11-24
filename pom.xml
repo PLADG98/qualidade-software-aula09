@@ -6,7 +6,7 @@
 
     <groupId>br.com.aula09</groupId>
     <artifactId>qualidade-software-aula09</artifactId>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
     <name>Qualidade de Software - Aula 09</name>
 
     <properties>
