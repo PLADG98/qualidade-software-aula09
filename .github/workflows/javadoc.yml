@@ -1,0 +1,26 @@
+name: Javadoc
+
+# Tarefa da Aula 09: gera o Javadoc automaticamente
+on:
+  push:
+    branches: [main, develop]
+  workflow_dispatch:
+
+jobs:
+  javadoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Gerar Javadoc
+        run: mvn -B javadoc:javadoc
+      - name: Publicar Javadoc como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc
+          path: target/**/apidocs/
