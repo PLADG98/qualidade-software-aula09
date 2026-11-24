@@ -6,7 +6,7 @@
 
     <groupId>br.com.aula09</groupId>
     <artifactId>qualidade-software-aula09</artifactId>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
     <name>Qualidade de Software - Aula 09</name>
 
     <properties>
@@ -76,6 +76,14 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <doclint>all,-missing</doclint>
+                </configuration>
             </plugin>
         </plugins>
     </build>
